@@ -30,28 +30,34 @@ juego.
 **Sigue en inglés:** el texto dibujado dentro de imágenes (botones del menú de título,
 cabeceras como «LOAD», botones Yes/No y algunos rótulos).
 
-## Instalación
+## Instalación (fácil)
 
-Requisitos: [Python 3](https://www.python.org/downloads/) y el juego cerrado.
+1. Cierra el juego.
+2. Descarga **`RF4S-Espanol-Instalador.exe`** de la página de
+   [Releases](https://github.com/oz-x/rune-factory-4-special-espanol/releases/latest).
+3. Ábrelo. Busca solo el juego en tus bibliotecas de Steam (si no lo encuentra, pulsa
+   **Buscar…** y elige la carpeta `Rune Factory 4 Special`).
+4. Pulsa **Instalar traducción**.
+5. En el juego, elige **Español** como idioma (ocupa el lugar de «English»).
 
-1. Descarga este repositorio (botón **Code → Download ZIP**) y descomprímelo.
-2. Abre una terminal en esa carpeta y ejecuta:
+Para volver al inglés, abre el instalador y pulsa **Desinstalar**: deja los archivos del
+juego exactamente como estaban. Si Steam actualiza o verifica el juego, la traducción se
+pierde: vuelve a instalarla.
 
-   ```
-   python instalar.py "C:\Program Files (x86)\Steam\steamapps\common\Rune Factory 4 Special"
-   ```
+Windows puede avisar de que el programa no está firmado («Windows protegió su PC»):
+pulsa **Más información → Ejecutar de todas formas**.
 
-   (cambia la ruta si tu juego está en otra biblioteca de Steam).
-3. En el juego, elige **English** como idioma: ahora aparece como «Español».
+## Instalación con Python (alternativa)
 
-## Desinstalación
+Con [Python 3](https://www.python.org/downloads/), desde la carpeta del repositorio:
 
 ```
-python desinstalar.py "C:\ruta\al\juego"
+python instalar.py              # busca el juego en Steam
+python instalar.py "C:\ruta\al\juego"
+python desinstalar.py
 ```
 
-Deja los archivos del juego exactamente como estaban. Si Steam actualiza o verifica el
-juego, la traducción se pierde: vuelve a ejecutar `instalar.py`.
+Para generar el `.exe`: `pip install pyinstaller` y ejecutar `construir_instalador.bat`.
 
 ## Cómo funciona
 
@@ -61,3 +67,8 @@ El instalador no reescribe los ~4,7 GB del juego: añade los textos traducidos a
 
 - `mod/texto/` — textos ya traducidos que se instalan.
 - `tools/` — lectura/escritura de los archivos `.mbundle` y de las tablas de texto.
+
+## Licencia
+
+El código y los textos de este repositorio se publican bajo licencia [MIT](LICENSE).
+Rune Factory 4 Special y sus textos originales pertenecen a Marvelous Inc.
